@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'pouSegunMes';
+  mesSeleccionado: string | undefined; // o el tipo de dato adecuado
 }

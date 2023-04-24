@@ -1,0 +1,27 @@
+div{
+    background-color: rgb(39, 38, 38);
+    border-radius: 20px;
+}
+
+  h1{
+    color:white;
+  }
+*{
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+}
+
+select {
+    border-radius: 10px;
+}
+
+.container {
+    padding: 30px;
+    width: 800px;
+    height: 600px;
+    background-color: #272727;
+    border-radius: 20px;
+}
+.container img {
+    width: 50%;
+}
