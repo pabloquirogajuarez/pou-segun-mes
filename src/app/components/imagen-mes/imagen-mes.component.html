@@ -1,10 +1,10 @@
 <div class="container mt-5 text-center justify-content-center">
-    <h1 class="text-center">Pou según tu fecha de nacimiento</h1>
-    <div class="form-group">
-      <select class="form-control" [(ngModel)]="mesSeleccionado" id="mes" placeholder="Elegir mes...">
-        <option value="" disabled selected>Elige un mes...</option>
-        <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
-      </select>
-    </div>
-    <img class="img-fluid" *ngIf="mesSeleccionado" [src]="'assets/' + mesSeleccionado + '.png'" alt="Imagen del mes">
+  <h1 class="text-center mb-4">Pou según tu fecha de nacimiento</h1>
+  <div class="form-group">
+    <select class="form-control" [(ngModel)]="mesSeleccionado" id="mes" placeholder="Elegir mes...">
+      <option value="" disabled selected>Elige un mes...</option>
+      <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
+    </select>
   </div>
+  <img class="img-fluid" *ngIf="mesSeleccionado" [src]="'assets/' + mesSeleccionado + '.png'" alt="Imagen del mes">
+</div>
