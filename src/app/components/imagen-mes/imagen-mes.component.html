@@ -1,10 +1,67 @@
-<div class="container mt-5 text-center justify-content-center">
-  <h1 class="text-center mb-4">Pou según tu fecha de nacimiento</h1>
-  <div class="form-group">
-    <select class="form-control" [(ngModel)]="mesSeleccionado" id="mes" placeholder="Elegir mes...">
-      <option value="" disabled selected>Elige un mes...</option>
-      <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
-    </select>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<body>
+  
+
+<div class="gradient px-4 pt-3 my-0 text-center text-white border-bottom rounded-5">
+  <h1 class="display-4 fw-bold">¿Qué pou sos según tu fecha de nacimiento?</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-4">Elige un mes del año y descubre un divertido pou asociado a ese mes. </p>
+
+    <div class="form-group">
+      <select class="form-control form-select-sm fw-bold rounded-5" [(ngModel)]="mesSeleccionado" id="mes" placeholder="Elegir mes...">
+        <option value="" disabled selected>Elige un mes...</option>
+        <option *ngFor="let mes of meses" [value]="mes">{{ mes }}</option>
+      </select>
+    </div>
+
   </div>
-  <img class="img-fluid" *ngIf="mesSeleccionado" [src]="'assets/' + mesSeleccionado + '.png'" alt="Imagen del mes">
+    <div class="container px-5 my-4">
+     <!-- <img src="assets/argprogramashowcase1.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700px" height="500px" loading="lazy"> -->
+     <img class="rounded-3 mb-4" height="250px" width="250px" *ngIf="!mesSeleccionado" src="assets/signo.png" alt="Imagen inicial en negro" loading="lazy">
+      <img class=" rounded-3 mb-4" height="250px" width="250px"  *ngIf="mesSeleccionado" [src]="'assets/' + mesSeleccionado + '.png'" alt="Imagen del mes" loading="lazy">
+    </div>
+
+    <div class="d-grid gap-2 d-sm-flex justify-content-center mb-5">
+      <button type="button" class="btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold" (click)="darLike()">
+        <i class="bi" [ngClass]="{'bi-heart': !liked, 'bi-heart-fill': liked}"></i> {{ likes }}</button>
+      <button type="button" class="btn btn btn btn-outline-light btn-lg px-4 me-sm-3 fw-bold" (click)="compartirEnTwitter()">Compartir en <i class="bi bi-twitter-x"></i></button>
+    </div>
+
 </div>
+
+<div class="gradient2 my-3 p-3 rounded-4 shadow-sm text-white">
+  <h6 class="pb-2 mb-0 fw-bold">Comentarios</h6>
+  <div class="d-flex pt-3">
+    <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"/><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
+    <p class="pb-3 mb-0 small lh-sm">
+      <strong class="d-block">@pablooqj</strong>
+      jasdjasdj
+    </p>
+  </div>
+  <div class="d-flex pt-0">
+    <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"/><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
+    <p class="pb-3 mb-0 small lh-sm">
+      <strong class="d-block">@pepe</strong>
+      test!
+    </p>
+  </div>
+  <div class="d-flex pt-0">
+    <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"/><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
+    <p class="pb-3 mb-0 small lh-sm">
+      <strong class="d-block">@xXx3LP3RR0G4M3RHDxXx</strong>
+      777.
+    </p>
+  </div>
+
+  <div class="form-group mt-0">
+    <textarea class="form-control fw-bold" rows="1" placeholder="Deja tu comentario..."></textarea>
+    <button class="btn btn-outline-light mt-2 fw-bold">Enviar</button>
+  </div>
+</div>
+
+
+</body>
