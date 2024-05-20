@@ -14,7 +14,7 @@ export class ImagenMesComponent {
   constructor() { }
 
   compartirEnTwitter() {
-    const url = 'https://pabloquirogajuarez.github.io/pou-segun-mes/'; 
+    const url = 'https://pou-segun-mes.vercel.app/'; 
     const texto = `Descubrí que pou sos según tu mes de nacimiento 👀.
      Mi mes es ${this.mesSeleccionado}!`;
     const twitterUrl = `https://x.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(texto)}`;
